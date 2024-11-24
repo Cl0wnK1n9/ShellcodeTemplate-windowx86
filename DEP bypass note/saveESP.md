@@ -4,6 +4,7 @@
 
 ```
 push esp ; pop * ; ret ;
+push esp ; (.*) ; pop (.*) ; ret ; 
 ```
 Số lần push và pop phải bằng nhau 
 
