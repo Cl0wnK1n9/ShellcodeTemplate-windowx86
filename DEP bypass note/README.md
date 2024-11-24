@@ -48,6 +48,11 @@
 - Trên máy window, thực hiện tìm các gadget trong binary mong muốn bằng lệnh `rp_win_x86.exe -f <binary name> -r 5 > rop.txt`
 - Các gadgets sẽ được lưu vào file rop.txt
 
+- Tìm địa chỉ hàm
+    - Trên windbg tại của sổ `command` gõ `!dh <tên module> -f`
+    - Lấy địa chỉ của import table và size
+    - Trên windbg tại của sổ `command` gõ `dps <tên module> + địa chỉ <tên module> + địa chỉ + size`
+
 - Tạo sample stack cho việc gọi hàm.
     ```
     functionAddress = b"AAAA"
