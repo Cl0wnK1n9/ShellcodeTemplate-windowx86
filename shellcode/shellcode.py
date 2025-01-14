@@ -97,11 +97,15 @@ code += "find_function_finished:"
 code += "popad;"
 code += "ret;"
 
-#   resolve kernel32 symbol
-#   Thực hiện tìm địa chỉ của hàm và thực hiện lưu vào [ebp + x] (X bắt đầu từ 0x10 và tăng 0x4 cho mỗi lần lưu hàm)
-#   Nếu hàm không có trong kernel32.dll cần phải tìm hàm loadlibraryA từ kernel32 sau đó load dll cần thiết, sau khi gọi loadlibraryA lưu địa chỉ từ eax vào ebx để thay đổi addressbase từ kernel32 sang dll mới được load
-#   Lưu ý: Thực hiện lưu hết các hàm cần thiết trong kernel32 trước khi load dll khác
-#  Ví dụ: Tìm và lưu hàm TerminateProcess từ kernel32
+#    resolve kernel32 symbol
+#    Thực hiện tìm địa chỉ của hàm và thực hiện lưu vào [ebp + x] (X bắt đầu từ 0x10 và tăng 0x4 cho mỗi lần lưu hàm)
+#    Nếu hàm không có trong kernel32.dll cần phải tìm hàm loadlibraryA từ kernel32 sau đó load dll cần thiết
+#    Sau khi gọi loadlibraryA lưu địa chỉ từ eax vào ebx để thay đổi addressbase từ kernel32 sang dll mới được load
+#    Lưu ý: Thực hiện lưu hết các hàm cần thiết trong kernel32 trước khi load dll khác
+#    Ví dụ: Tìm và lưu hàm TerminateProcess từ kernel32
+#    [ebp + 4] : Hàm find_function
+
+
 
 #   code += "resolve_symbols_kernel32:"
 #   code += "push 0x78b5b983;" # TerminateProcess
