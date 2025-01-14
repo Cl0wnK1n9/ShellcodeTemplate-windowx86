@@ -36,4 +36,6 @@
   - python3 -m pip install --upgrade pwntools
 
 - Setup smbserver trên kali:
-sudo smbserver.py met /home/kali/ -smb2support
+
+sudo impacket-smbserver met /home/kali -smb2support
+
